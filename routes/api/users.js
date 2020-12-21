@@ -5,6 +5,8 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -18,11 +20,18 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 router.post('/register', (req, res) => {
     // Check to make sure nobody has already registered with a duplicate email
+    const { errors, isValid } = validateRegisterInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    
     User.findOne({ email: req.body.email })
       .then(user => {
         if (user) {
-          // Throw a 400 error if the email address already exists
-          return res.status(400).json({email: "A user has already registered with this address"})
+            errors.email = 'Email already exists';
+            // Throw a 400 error if the email address already exists
+            return res.status(400).json(errors)
         } else {
           // Otherwise create a new user
           const newUser = new User({
@@ -45,36 +54,47 @@ router.post('/register', (req, res) => {
   })
 
 router.post('/login', (req, res) => {
-const email = req.body.email;
-const password = req.body.password;
+    const { errors, isValid } = validateLoginInput(req.body);
 
-User.findOne({email})
-    .then(user => {
-    if (!user) {
-        return res.status(404).json({email: 'This user does not exist'});
+    if (!isValid) {
+        return res.status(400).json(errors);
     }
 
-    bcrypt.compare(password, user.password)
-        .then(isMatch => {
-            if (isMatch) {
-            const payload = {id: user.id, handle: user.handle};
+    const email = req.body.email;
+    const password = req.body.password;
 
-            jwt.sign(
-                payload,
-                keys.secretOrKey,
-                // Tell the key to expire in one hour
-                {expiresIn: 3600},
-                (err, token) => {
-                res.json({
-                    success: true,
-                    token: 'Bearer ' + token
-                });
-                });
-            } else {
-            return res.status(400).json({password: 'Incorrect password'});
-            }
+
+
+    User.findOne({email})
+        .then(user => {
+        if (!user) {
+            errors.email = 'User not found';
+            return res.status(404).json(errors);
+        }
+
+        bcrypt.compare(password, user.password)
+            .then(isMatch => {
+                if (isMatch) {
+                const payload = {id: user.id, handle: user.handle};
+
+                jwt.sign(
+                    payload,
+                    keys.secretOrKey,
+                    // Tell the key to expire in one hour
+                    {expiresIn: 3600},
+                    (err, token) => {
+                    res.json({
+                        success: true,
+                        token: 'Bearer ' + token
+                    });
+                    });
+                } else {
+                    errors.password = 'Incorrect password'
+                    return res.status(400).json(errors);
+          
+                }
+            })
         })
-    })
 })
 
 
