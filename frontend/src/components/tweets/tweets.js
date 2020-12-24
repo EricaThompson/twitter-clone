@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import TweetBox from './tweet_box';
-import axios from 'axios';
-// import TweetCompose from './tweet_compose';
 
 class Tweet extends React.Component {
   constructor(props) {
@@ -58,7 +56,7 @@ class Tweet extends React.Component {
       return (<div>There are no Tweets</div>)
     } else {
       return (
-        <div>
+        <div className="tweets">
           <h2 className="home-title">Home</h2>
           <div className="compose-block">
             <div className="profile-pic"></div>
@@ -82,10 +80,12 @@ class Tweet extends React.Component {
             <br />
             {/* <TweetBox text={this.state.newTweet} /> */}
         </div>
+          </div >
+          <div className="feed">
+            {this.props.tweets.map(tweet => (
+              <TweetBox key={tweet._id} user={this.props.currentUser} text={tweet.text} />
+            ))}
           </div>
-          {this.props.tweets.map(tweet => (
-            <TweetBox key={tweet._id} text={tweet.text} />
-          ))}
         </div>
       );
     }

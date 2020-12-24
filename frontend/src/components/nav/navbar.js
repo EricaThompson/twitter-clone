@@ -18,11 +18,17 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div className="top-links">
-                <Link to={'/tweets'}><p>All Tweets</p></Link>
-                <Link to={'/profile'}><p>Profile</p></Link>
-                <Link to={'/new_tweet'}><p>Write a Tweet</p></Link>
-                <button onClick={this.logoutUser}>Logout</button>
+            <div 
+              className="navbar"
+            >
+                <Link to={'/tweets'}><p><i className="fas fa-igloo"></i></p></Link>
+                <Link to={'/profile'}><p><i className="far fa-user"></i></p></Link>
+                <Link to={'/new_tweet'}><p><i className="fas fa-feather"></i></p></Link>
+                <button 
+                  onClick={this.logoutUser}
+                  className="logout"
+                >
+                </button>
             </div>
         );
       } else {
@@ -37,8 +43,10 @@ class NavBar extends React.Component {
 
   render() {
       return (
-        <div>
-            <h1>OWLY</h1>
+        <div
+          className="navbar"
+        >
+            <h1><Link to={'/tweets'}><p><img className="logo" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/owl_1f989.png" alt="owly logo" /></p></Link></h1>
             { this.getLinks() }
         </div>
       );

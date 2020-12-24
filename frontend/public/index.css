@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.app {
+    display: flex;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* position: relative; */
@@ -12,9 +16,57 @@ title {
     font-weight: lighter;
 }
 
-h1 {
+/* .navbar {
+    display: flex;
+} */
+
+.logo {
     font-weight: lighter;
-    margin: 50px 0;
+    /* margin: 50px 0; */
+    height: 35px;
+    width: 35px;
+    /* justify-self: center; */
+    /* font-size: 10px; */
+    /* padding: 15px; */
+    /* padding-left: 5px; */
+
+}
+
+.fa-igloo {
+    color: #25A1F2;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.fa-igloo:hover {
+    background-color: #25A1F2;
+    color: white;
+    border-radius: 50%;
+}
+
+.fa-user {
+    color: #25A1F2;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.fa-user:hover {
+    background-color: #25A1F2;
+    color: white;
+    border-radius: 50%;
+}
+
+
+.fa-feather {
+    color: white;
+    background-color: #25A1F2;
+    padding: 15px;
+    border-radius: 50%;
+    
+}
+
+.fa-feather:hover {
+    background-color: #1f88ce
 }
 
 .top-links {
@@ -22,6 +74,17 @@ h1 {
     top: 0;
     right: 0;
     display: flex;
+}
+
+.logout {
+    height: 10px;
+    background-color: burlywood;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
 }
 
 p {
@@ -73,6 +136,8 @@ button {
     line-height: 1.3125;
     font-size: 19px;
     font-weight: bolder;
+    margin-left: 20px;
+
 }
 
 /* Tweet compose */
@@ -83,6 +148,9 @@ button {
     border-top: 1px solid #ECEEF1;
     padding-top: 15px;
     /* margin-left: 0px; */
+    border-bottom: 1px solid #ECEEF1;
+    padding-bottom: 48px;
+    padding-left: 20px;
 }
 
 .profile-pic {
@@ -102,7 +170,6 @@ button {
 .input-area {
     position: relative;
     width: 100%;
-    /* border-bottom: 1px solid #ECEEF1; */
 }
 
 .compose-button {
@@ -122,4 +189,18 @@ button {
 
 .compose-button:disabled {
     background-color: #9BD0F9;
+}
+
+/* Tweets */
+
+.tweets {
+    margin-left: 20px;
+    border-left: 1px solid #ECEEF1;
+}
+
+.feed {
+    border-top: 1px solid #ECEEF1;
+    margin-top: 10px;
+    padding: 20px;
+    padding-top: 0px;
 }
