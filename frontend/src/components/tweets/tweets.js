@@ -57,7 +57,10 @@ class Tweet extends React.Component {
     } else {
       return (
         <div className="tweets">
-          <div className="home-bar"><h1 className="home-title">Home</h1><div className='sparkle'>✨</div></div>
+          <div className="home-bar">
+            <h1 className="home-title">Home</h1>
+            <div className='sparkle'>✨</div>
+          </div>
           <div className="compose-block">
             <div className="profile-pic"></div>
             <div className="input-area">
