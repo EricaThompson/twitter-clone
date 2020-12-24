@@ -21,6 +21,7 @@ class NavBar extends React.Component {
             <div 
               className="navbar"
             >
+                <Link to={'/tweets'}><p><i className="fab fa-earlybirds"></i></p></Link>
                 <Link to={'/tweets'}><p><i className="fas fa-igloo"></i></p></Link>
                 <Link to={'/profile'}><p><i className="far fa-user"></i></p></Link>
                 <Link to={'/new_tweet'}><p><i className="fas fa-feather"></i></p></Link>
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
         <div
           className="navbar"
         >
-            <h1><Link to={'/tweets'}><p><img className="logo" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/owl_1f989.png" alt="owly logo" /></p></Link></h1>
+            
             { this.getLinks() }
         </div>
       );

@@ -4,12 +4,17 @@
 
 .app {
     display: flex;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* position: relative; */
     
+}
+
+html {
+    padding: 0px;
 }
 
 title {
@@ -32,6 +37,27 @@ title {
 
 }
 
+/* .logo:hover {
+    background-color: #e6f5fe;
+    padding: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+} */
+
+
+.fa-earlybirds {
+    color: #25A1F2;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.fa-earlybirds:hover {
+    background-color: #e6f5fe;
+    color: #25A1F2;
+    border-radius: 50%;
+}
+
 .fa-igloo {
     color: #25A1F2;
     padding: 10px;
@@ -39,20 +65,21 @@ title {
 }
 
 .fa-igloo:hover {
-    background-color: #25A1F2;
-    color: white;
+    background-color: #e6f5fe;
+    color: #25A1F2;
     border-radius: 50%;
 }
 
 .fa-user {
-    color: #25A1F2;
+    /* color: #25A1F2; */
+    color: #10151A;
     padding: 10px;
     font-size: 25px;
 }
 
 .fa-user:hover {
-    background-color: #25A1F2;
-    color: white;
+    background-color: #e6f5fe;
+    color: #25A1F2;
     border-radius: 50%;
 }
 
@@ -132,18 +159,50 @@ button {
     margin-left: 25px;
 }
 
-.home-title {
-    line-height: 1.3125;
+.nav-bar {
+    position: relative;
+}
+
+.home-bar {
+    /* line-height: 1.3125; */
+    display: flex;
     font-size: 19px;
     font-weight: bolder;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    position: fixed;
+    background-color: white;
+    height: 61px;
+    width: 600px;
+    z-index: 1;
+    /* padding-top: 22px; */
+    padding-left: 15px;
+    padding-right: 18px;
+    margin-top: 0px;
+    top: 0px;
+    left: auto;
+    border-bottom: 1px solid#ECEEF1;
+    /* border: 1px solid purple; */
+    justify-content: space-between;
+    /* margin: 0 auto; */
+
+}
+
+.home-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+.fa-star-of-life {
+    align-self: center;
+    color: #25A1F2;
 
 }
 
 /* Tweet compose */
 
 .compose-block {
-    width: 100%;
+    margin-top: 53px;
+    width: 600px;
     display: flex;
     border-top: 1px solid #ECEEF1;
     padding-top: 15px;
@@ -194,13 +253,15 @@ button {
 /* Tweets */
 
 .tweets {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     border-left: 1px solid #ECEEF1;
+    margin: 0 auto;
+    position: relative;
 }
 
 .feed {
     border-top: 1px solid #ECEEF1;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     padding: 20px;
     padding-top: 0px;
 }
