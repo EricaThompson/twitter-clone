@@ -5,6 +5,7 @@ class TweetBox extends React.Component {
     return (
         <div className="tweet-box">
             {/* <h2>{this.props.user.handle}</h2> */}
+            <div className="profile-pic"></div>
             <h3 className="tweet">{this.props.text}</h3>
             <div className='social-icons'>
               <i className="far fa-comment"></i>

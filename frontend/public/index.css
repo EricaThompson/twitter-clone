@@ -324,6 +324,8 @@ button {
     padding: 13px;
     position: relative;
     display: flex;
+    font-size: 12px;
+    line-height: 1.314;
     /* justify-content: space-between; */
 }
 
@@ -331,11 +333,18 @@ button {
     background-color: #f7f7f7;
 }
 
+.tweet {
+    width: 80%;
+    padding-bottom: 50px;
+    padding-left: 17px;
+    font-weight: lighter;
+}
+
 
 
 .social-icons {
     position: absolute;
-    bottom: 10px;
+    bottom: 14px;
     width: 600px;
     font-size: 20px;
     color: #5B6F83;
