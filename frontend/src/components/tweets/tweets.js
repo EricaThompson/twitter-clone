@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import TweetBox from './tweet_box';
+import TweetCompose from './tweet_compose';
 
 class Tweet extends React.Component {
   constructor(props) {
@@ -25,7 +26,11 @@ class Tweet extends React.Component {
     } else {
       return (
         <div>
-          <h2>All Tweets</h2>
+          <h2 className="home-title">Home</h2>
+          <div className="compose-block">
+            <div className="profile-pic"></div>
+            <TweetCompose /> 
+          </div>
           {this.state.tweets.map(tweet => (
             <TweetBox key={tweet._id} text={tweet.text} />
           ))}

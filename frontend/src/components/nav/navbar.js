@@ -18,10 +18,10 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div>
-                <Link to={'/tweets'}>All Tweets</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_tweet'}>Write a Tweet</Link>
+            <div className="top-links">
+                <Link to={'/tweets'}><p>All Tweets</p></Link>
+                <Link to={'/profile'}><p>Profile</p></Link>
+                <Link to={'/new_tweet'}><p>Write a Tweet</p></Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );

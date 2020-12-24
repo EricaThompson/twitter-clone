@@ -34,16 +34,27 @@ class TweetCompose extends React.Component {
   }
 
   render() {
+    let disabler = true
+    if (this.state.text.length > 0){
+      disabler = false
+    }
+
     return (
-        <div>
+        <div className="input-area">
             <form onSubmit={this.handleSubmit}>
                 <div>
                     <input type="textarea"
+                        className="tweet-compose-input"
                         value={this.state.text}
                         onChange={this.update()}
-                        placeholder="Write your tweet..."
+                        placeholder="What's happening?"
                     />
-                    <input type="submit" value="Submit" />
+                    <input
+                      disabled={disabler} 
+                      type="submit" 
+                      value="Tweet" 
+                      className="compose-button"
+                    />
                 </div>
             </form>
             <br />
