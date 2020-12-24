@@ -32,21 +32,26 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
+passport.authenticate('jwt', { session: false},
+// {headers:{"Content-Type" : "application/json"}},
+), 
+(req, res) => {
+      // console.log('req.headers: ', req.headers)
       const { errors, isValid } = validateTweetInput(req.body);
   
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+      console.log('req user id: ',req.user.id)
+      
       const newTweet = new Tweet({
         text: req.body.text,
         user: req.user.id
       });
+      // debugger
   
       newTweet.save().then(tweet => res.json(tweet));
-    }
+    }, 
   );
 
 

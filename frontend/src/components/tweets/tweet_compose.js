@@ -50,10 +50,10 @@ class TweetCompose extends React.Component {
                         placeholder="What's happening?"
                     />
                     <input
+                      className="compose-button"
                       disabled={disabler} 
                       type="submit" 
                       value="Tweet" 
-                      className="compose-button"
                     />
                 </div>
             </form>

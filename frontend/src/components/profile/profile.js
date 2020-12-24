@@ -20,13 +20,18 @@ class Profile extends React.Component {
     }   
     
     render() {
+        
+        // this.state.tweets.map(tweet => (
+        //   <TweetBox key={tweet._id} text={tweet.text} />
+        // ))
+
         if (this.state.tweets.length === 0) {
           return (<div>This user has no Tweets</div>)
         } else {
           return (
             <div>
               <h2>All of This User's Tweets</h2>
-              {this.state.tweets.map(tweet => (
+              {this.state.tweets.reverse().map(tweet => (
                 <TweetBox key={tweet._id} text={tweet.text} />
               ))}
             </div>
