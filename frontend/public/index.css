@@ -401,3 +401,51 @@ button {
     border-radius: 55%;
 
 }
+
+/* Profile */
+.profile-bar {
+    display: flex;
+    border-left:1px solid #ECEEF1;
+    height: 53px;
+    /* margin-bottom:  */
+    /* border: 1px solid purple; */
+    display: relative;
+}
+
+.fa-arrow-left {
+    margin-right: 10px;
+    color: #25A1F2;
+    padding: 20px;
+}
+
+.bar-right-side {
+    float: right;
+    /* border: 1px solid hotpink; */
+    color: #5B7083;
+    font-size: 12px;
+}
+
+.profile-handle {
+    font-weight: bolder;
+    color: black;
+    font-size: 23px;
+}
+
+.main {
+    height: 134px;
+    width: 134px;
+    border: 4px solid white;
+    margin-top: 119px;
+    margin-left: -60px;
+    /* display: absolute;
+    top: 250px; */
+}
+
+.profile {
+    margin-left: -50px;
+}
+
+.profile-feed {
+    margin-top: 309px;
+}
+
