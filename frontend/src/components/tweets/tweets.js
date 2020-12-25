@@ -86,7 +86,7 @@ class Tweet extends React.Component {
           </div >
           <div className="feed">
             {this.props.tweets.map(tweet => (
-              <TweetBox key={tweet._id} user={this.props.currentUser} text={tweet.text} />
+              <TweetBox key={tweet._id} user={tweet.user} text={tweet.text} />
             ))}
           </div>
         </div>

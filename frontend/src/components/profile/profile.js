@@ -22,10 +22,12 @@ class Profile extends React.Component {
     }   
     
     render() {
-      // console.log(this.props.currentUser)
+      console.log(this.state.tweets)
       let timestamp = this.props.currentUser.id.toString().substring(0,8)
       let date = new Date( parseInt( timestamp, 16 ) * 1000 )
       let month = date.getMonth()
+      
+      
       // let year = date.getFullYear()
   
       switch (month) {
@@ -87,25 +89,41 @@ class Profile extends React.Component {
           return (<div>This user has no Tweets{this.state.status}</div>)
         } else {
           return (
-            <div>
+            <div className="profile-container">
               <div className="profile-bar">
                 <div><i className="fas fa-arrow-left"></i></div>
                 <div className="bar-right-side">
                   <div className="profile-handle">{this.props.currentUser.handle}</div>
                   <div>{this.state.tweets.length} Tweets</div>
+                </div>
+              </div> 
+              <div className="header-img-container">
+                <img className="header-img" src='https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-lisa-fotios-2215534.jpg' alt='' />
+              </div>
+
+              <div className="profile-container">
                   <div className="profile-pic main"></div>
                   <div className="profile">
                     <div className="profile-handle">@{this.props.currentUser.handle}</div>
-                    <div><i className="far fa-calendar-alt"></i>  Joined {month} {date.getFullYear()}</div>
+                    <div className="profile-date"><i className="far fa-calendar-alt"></i>  Joined {month} {date.getFullYear()}</div>
                   </div>
-                </div>
-              </div> 
+
+              </div>
+              <div className="profile-tabs">
+                <div className="tab selected">Tweets</div>
+                <div className="tab">Tweets & replies</div>
+                <div className="tab">Media</div>
+                <div className="tab">Likes</div>
+              </div>
 
               
               <div className='profile-feed'>
-                {this.state.tweets.reverse().map(tweet => (
-                  <TweetBox key={tweet._id} text={tweet.text} />
-                ))}
+                <div className="profile-tweet-box">
+
+                  {this.state.tweets.reverse().map(tweet => (
+                    <TweetBox key={tweet._id} date={tweet.date} user={tweet.user} text={tweet.text} />
+                  ))}
+                </div>
               </div>
             </div>
           );

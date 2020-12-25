@@ -1,11 +1,15 @@
 import React from 'react';
+const { MongoClient } = require("mongodb");
 
 class TweetBox extends React.Component {
   render() {
+    // let author = User.findOne(this.props.user)
     return (
         <div className="tweet-box">
-            {/* <h2>{this.props.user.handle}</h2> */}
             <div className="profile-pic"></div>
+            <div>{this.props.user}</div>
+            <br />
+            <br />
             <h3 className="tweet">{this.props.text}</h3>
             <div className='social-icons'>
               <i className="far fa-comment"></i>
