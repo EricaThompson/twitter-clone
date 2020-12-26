@@ -7,7 +7,7 @@ class TweetBox extends React.Component {
       let timestamp = this.props.date.toString().substring(0,8)
       let date = new Date( parseInt( timestamp, 16 ) * 1000 )
       let month = date.getMonth()
-      let day = date.getDate();
+      let day = date.getDate() - 5;
 
       switch (month) {
         case 0:
