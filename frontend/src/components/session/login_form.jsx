@@ -81,8 +81,11 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <input type="submit" value="Log in" />
-            {this.renderErrors()}
+            <input 
+              className="session-submit"
+              type="submit" 
+              value="Log in" />
+              {this.renderErrors()}
             <Link to={'/signup'}><p className="session-link">Sign up for Owly</p></Link>
           </div>
         </form>

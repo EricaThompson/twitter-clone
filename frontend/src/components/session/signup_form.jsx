@@ -94,8 +94,11 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Sign up" />
-            {this.renderErrors()}
+            <input
+              className="session-submit" 
+              type="submit" 
+              value="Sign up" />
+              {this.renderErrors()}
             <Link to={'/login'}><p className="session-link">Already signed up? Log in to Owly</p></Link>
           </div>
         </form>

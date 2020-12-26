@@ -558,7 +558,7 @@ button {
     /* padding: 10px; */
 }
 
-input[type=submit] {
+.session-submit {
     max-width: 538px;
     min-width: 439px;
     height: 55px;
@@ -569,7 +569,7 @@ input[type=submit] {
     border-radius: 50px 50px 50px 50px;
 }
 
-input[type=submit]:hover {
+.session-submit:hover {
     background-color: #1e80c2;
     
 }
