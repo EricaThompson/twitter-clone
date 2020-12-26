@@ -410,11 +410,35 @@ button {
     background-color: #f7f7f7;
 }
 
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 523px;
+    margin-left: -8px;
+    /* border: 1px solid purple; */
+    /* justify-content: space-between; */
+}
+
+.tweet-box-handle {
+    font-weight: bolder;
+}
+
+.tweet-box-options {
+    /* margin-right: 2px; */
+    border: none;
+    color: rgb(216, 208, 208);
+    
+
+}
+
+
 .tweet {
     width: 80%;
     padding-bottom: 50px;
     padding-left: 17px;
     font-weight: lighter;
+    margin-top: -38px;
+    /* display: block; */
 }
 
 

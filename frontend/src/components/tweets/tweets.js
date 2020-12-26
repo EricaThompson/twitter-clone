@@ -31,7 +31,9 @@ class Tweet extends React.Component {
       // id: this.props.user.id
     };
 
-    this.props.composeTweet(tweet);
+    this.props.composeTweet(tweet)
+      .then(()=>this.props.fetchTweets())
+    
     this.setState({text: ''})
   }
 
