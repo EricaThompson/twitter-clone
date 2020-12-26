@@ -74,6 +74,7 @@ h3 {
     color: #25A1F2;
     padding: 12px;
     font-size: 23px;
+    margin-top: -10px;
 
 }
 
@@ -88,6 +89,7 @@ h3 {
     color: #10151A;
     padding: 14px;
     font-size: 25px;
+    margin-top: -15px;
 }
 
 .fa-user:hover {
@@ -102,6 +104,8 @@ h3 {
     background-color: #25A1F2;
     padding: 17px;
     border-radius: 50%;
+    margin-top: -10px;
+    margin-right: 5px;
     
 }
 
@@ -113,6 +117,7 @@ h3 {
     color: rgb(197, 193, 193);
     padding: 14px;
     font-size: 23px;
+    margin-top: -20px;
 }
 
 .fa-ellipsis-h {
@@ -121,7 +126,7 @@ h3 {
     font-size: 14px;
     padding: 4px;
     margin-left: 13px;
-    margin-top: 13px;
+    /* margin-top: 13px; */
     margin-bottom: 13px;
 }
 
@@ -139,6 +144,7 @@ h3 {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+    margin-top: -1px;
 
 }
 
@@ -189,9 +195,16 @@ button {
 }
 
 .nav {
-    margin-right: 20px;
+    /* margin-right: 50px; */
     margin-left: -60px;
+    margin-top: -15px;
+    position: fixed;
+    overflow-y: scroll;
+    padding-right: 30px;
+    height: 110%;
+    width: 100px;
     /* border: 1px solid purple; */
+    margin-right: 80px;
 
 }
 
@@ -208,6 +221,7 @@ button {
     border-right: 1px solid #ECEEF1;
     background-color: #F7F9FA;
     width: 100%;
+    margin-left: 40px;
 
 }
 
@@ -229,10 +243,11 @@ button {
     /* left: 11.7%;
     right: 11.7%; */
     border-bottom: 1px solid#ECEEF1;
+    border-right: 1px solid #ECEEF1;
     /* border: 1px solid purple; */
     justify-content: space-between;
     /* margin: 0 auto; */
-    width: 563px;
+    width: 559px;
     /* margin-right: -400px; */
 }
 
