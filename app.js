@@ -38,6 +38,12 @@ app.use("/api/tweets", tweets);
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
+app.get(`/author/:id`, (req, res) => {
+  // let id = req.params.id
+  User.findOne({_id: req.params.id})
+    .then(result => res.send(result)).catch(err => console.groupCollapsed(err))
+})
+
 
 const port = process.env.PORT || 5000;
 

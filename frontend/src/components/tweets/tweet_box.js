@@ -1,7 +1,46 @@
 import React from 'react';
-const { MongoClient } = require("mongodb");
+// const { MongoClient } = require("mongodb");
+import axios from 'axios';
 
 class TweetBox extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      author: null
+    }
+  }
+
+  // getAuthor(){
+  //   axios.get(`/author/${this.props.user}`)
+  //     .then(res => console.log('getauthor res', res)
+  //     , this.setState({author: res[0]})
+  //     )
+      
+  // }
+
+  componentDidMount(){
+    let goodValues;
+    axios.get(`/author/${this.props.user}`)
+      .then(res => 
+        // console.log('getauthor res', res),
+        // let goodValues;
+
+        // if (Object.values.res.handle){
+        //   goodValues.push(res.handle)
+        // }
+        // console.log(res.data.handle)
+        this.setState({author: res.data.handle})
+      )
+      // try {
+
+      //   const response = await fetch(axios.get(`/author/${this.props.user}`))
+      //   const json = await response.json()  
+      //   this.setState({author: json})
+      // } catch (error){
+      //   console.log(error)
+      // }
+  }
+
   render() {
     // let author = User.findOne(this.props.user)
       let timestamp = this.props.date.toString().substring(0,8)
@@ -50,12 +89,14 @@ class TweetBox extends React.Component {
         default:
           break;
       }
+
+      // setTimeout(()=> {console.log(this.state.author[0]._id)}, 10000)
     return (
         <div className="tweet-box">
             <div className="profile-pic"></div>
             <div>
               <div className="top">
-                <p className="tweet-box-handle">{this.props.user} · {month} {day}</p>
+                <p className="tweet-box-handle"> @{this.state.author} · {month} {day}</p>
                 <i className="fas fa-ellipsis-h tweet-box-options"></i>
               </div>
               <br />
