@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -56,36 +56,47 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div className="session-container">
+        <p className="session-logo">🦉</p>
+        <h1 className="session-title">Sign up for Owly</h1>
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
+          <div className="session-form sign-up">
             <br/>
-              <input type="text"
+              <input 
+                className="session-input"
+                type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
               />
             <br/>
-              <input type="text"
+              <input 
+                className="session-input"
+                type="text"
                 value={this.state.handle}
                 onChange={this.update('handle')}
                 placeholder="Handle"
               />
             <br/>
-              <input type="password"
+              <input 
+                className="session-input"
+                type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
             <br/>
-              <input type="password"
+              <input 
+                className="session-input"
+                type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Sign up" />
             {this.renderErrors()}
+            <Link to={'/login'}><p className="session-link">Already signed up? Log in to Owly</p></Link>
           </div>
         </form>
       </div>
