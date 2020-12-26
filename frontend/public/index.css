@@ -90,6 +90,7 @@ h3 {
     padding: 14px;
     font-size: 25px;
     margin-top: -15px;
+    /* margin-left: 2px; */
 }
 
 .fa-user:hover {
@@ -118,6 +119,19 @@ h3 {
     padding: 14px;
     font-size: 23px;
     margin-top: -20px;
+}
+
+.fa-bookmark {
+    margin-left: 2px;
+}
+
+.fa-stream {
+    border: 2px solid rgb(236, 230, 230);
+    padding: 4px 4px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: -15px;
+    border-radius: 4px;
 }
 
 .fa-ellipsis-h {

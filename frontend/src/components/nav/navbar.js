@@ -26,6 +26,8 @@ class NavBar extends React.Component {
                 <p><i className="fas fa-search disabled"></i></p>
                 <p><i className="far fa-bell disabled"></i></p>
                 <p><i className="far fa-envelope disabled"></i></p>
+                <p><i className="far fa-bookmark disabled"></i></p>
+                <p><i className="fas fa-stream disabled"></i></p>
                 <Link to={'/profile'}><p><i className="far fa-user"></i></p></Link>
                 <p><i className="fas fa-ellipsis-h disabled"></i></p>
                 <Link to={'/new_tweet'}><p><i className="fas fa-feather"></i></p></Link>
