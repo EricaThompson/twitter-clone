@@ -525,3 +525,59 @@ button {
 
 } */
 
+/* Session forms*/
+
+.session-container {
+    /* border: 1px solid purple; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.session-logo {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 34px;
+    text-align: center;
+}
+
+.session-title {
+    font-size: 22px;
+}
+
+/* .log-in {
+} */
+
+.session-input {
+    max-width: 538px;
+    min-width: 439px;
+    height: 55px;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+}
+
+input[type=submit] {
+    max-width: 538px;
+    min-width: 439px;
+    height: 55px;
+    color: white;
+    font-weight: bolder;
+    background-color: #25A1F2;
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+}
+
+input[type=submit]:hover {
+    background-color: #1e80c2;
+    
+}
+
+.session-link {
+    color: #25A1F2;
+    margin: 0;
+}
+
+
+
