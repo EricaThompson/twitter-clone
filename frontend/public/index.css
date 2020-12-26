@@ -685,7 +685,7 @@ button {
 }
 
 .session-link {
-    color: #25A1F2;
+    color: 
     margin: 0;
 }
 
@@ -733,6 +733,14 @@ button {
     font-size: 16px;
     font-weight: lighter;
     color: #6A7C8E;
+}
+
+.spinner {
+    color: #25A1F2;
+    position: absolute;
+    top: 20%;
+    right: 45%;
+    font-size: 100px;
 }
 
 

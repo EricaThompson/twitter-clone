@@ -20,8 +20,8 @@ const App = () => (
           <AuthRoute exact path="/" component={MainPage} />
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
-          <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
           <ProtectedRoute path="/search" component={Search} />
+          <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
           <ProtectedRoute exact path="/profile" component={ProfileContainer} />
           <ProtectedRoute exact path="/new_tweet" component={TweetComposeContainer} />
       </Switch>

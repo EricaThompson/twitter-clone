@@ -57,7 +57,7 @@ class Tweet extends React.Component {
 
 
     if (this.props.tweets.length === 0) {
-      return (<div>There are no Tweets</div>)
+      return (<div className='tweets-spinner spinner'><i className="fas fa-spinner fa-spin"></i></div>)
     } else {
       return (
         <div className="tweets">
