@@ -8,6 +8,7 @@ import SignupFormContainer from './session/signup_form_container';
 import TweetsContainer from './tweets/tweets_container';
 import ProfileContainer from './profile/profile_container';
 import TweetComposeContainer from './tweets/tweet_compose_container';
+import Search from './search/search';
 
 const App = () => (
     <div className="app">
@@ -20,6 +21,7 @@ const App = () => (
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
           <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
+          <ProtectedRoute path="/search" component={Search} />
           <ProtectedRoute exact path="/profile" component={ProfileContainer} />
           <ProtectedRoute exact path="/new_tweet" component={TweetComposeContainer} />
       </Switch>

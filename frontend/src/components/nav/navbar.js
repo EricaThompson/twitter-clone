@@ -5,10 +5,10 @@ import axios from 'axios';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: '',
-      result: null
-    }
+    // this.state = {
+    //   query: '',
+    //   result: null
+    // }
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
@@ -18,20 +18,20 @@ class NavBar extends React.Component {
       this.props.logout();
   }
 
-  update() {
-    return e => this.setState({
-      query: e.currentTarget.value
-    });
-  }
+  // update() {
+  //   return e => this.setState({
+  //     query: e.currentTarget.value
+  //   });
+  // }
 
-  searchUsers(){
-    //maybe push array of other results
-    axios.get(`search/${this.state.query}`)
-      .then(res => 
-        console.log(res)
-        // this.setState({result: res.data.handle})
-      ).catch(err => console.log('results err', err))
-  }
+  // searchUsers(){
+  //   //maybe push array of other results
+  //   axios.get(`search/${this.state.query}`)
+  //     .then(res => 
+  //       console.log(res)
+  //       // this.setState({result: res.data.handle})
+  //     ).catch(err => console.log('results err', err))
+  // }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
@@ -42,17 +42,17 @@ class NavBar extends React.Component {
             >
                 <Link to={'/tweets'}><p><i className="fab fa-earlybirds"></i></p></Link>
                 <Link to={'/tweets'}><p><i className="fas fa-igloo"></i></p></Link>
-                <p><i className="fas fa-search disabled"></i></p>
-                <input 
+                <Link to={'/search'}><p><i className="fas fa-search"></i></p></Link>
+                {/* <input 
                   onChange={this.update()}
                   
                   type="text"
-                />
-                <div
+                /> */}
+                {/* <div
                   onClick={()=>this.searchUsers()}
                 >
                   x
-                </div>
+                </div> */}
 
                 {/* </input> */}
                 <p><i className="far fa-bell disabled"></i></p>
@@ -80,7 +80,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log('search res', this.state.result)
       return (
         <div
           className="navbar"

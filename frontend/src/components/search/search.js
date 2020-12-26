@@ -1,15 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import TweetBox from './tweet_box';
+// import TweetBox from '../tweets/tweet_box';
+import axios from 'axios';
+// import e from 'express';
 
 class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             query: '',
-            result: null
+            result: []
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentWillMount() {
@@ -45,16 +47,17 @@ class Search extends React.Component {
     update() {
         // console.log('update text',this.state.text)
         return e => this.setState({
-        text: e.currentTarget.value
+        query: e.currentTarget.value
         });
     }
 
-    searchUsers(){
+    searchUsers(e){
+        e.preventDefault()
         //maybe push array of other results
         axios.get(`search/${this.state.query}`)
           .then(res => 
-            console.log(res)
-            // this.setState({result: res.data.handle})
+            // console.log(res)
+            this.setState({result: res})
           ).catch(err => console.log('results err', err))
       }
 
@@ -66,23 +69,43 @@ class Search extends React.Component {
         // if (this.state.text.length > 0){
         // disabler = false
         // }
+        console.log('update', this.state.query)
+        console.log('search res', this.state.result)
+
 
     
 
 
-    if (this.props.tweets.length === 0) {
-      return (<div>There are no Tweets</div>)
+    if (this.state.result.length === 0) {
+      return (<div className="search-bar">
+                <p><i className="fas fa-search search-bar-icon"></i></p>
+                <form 
+                    onSubmit={(e)=>this.searchUsers(e)}
+                    className="search-form">
+                    <input
+                        onChange={this.update()}
+                        className="search" 
+                        type="text"
+                        placeholder="Search Owly"
+                    />
+                </form>
+            </div>
+            )
     } else {
       return (
         <div className="tweets">
           <div className="home-bar">
             <h1 className="home-title">Home</h1>
-            <div className='sparkle'>✨</div>
+            {/* <input 
+                type="text"
+            /> */}
+            <p><i className="fas fa-ellipsis-h disabled"></i></p>
+            {/* <div className='sparkle'>✨</div> */}
           </div>
           <div className="compose-block">
             <div className="profile-pic"></div>
             <div className="input-area">
-              <form onSubmit={this.handleSubmit}>
+              {/* <form onSubmit={this.handleSubmit}>
                   <div>
                       <input type="textarea"
                           className="tweet-compose-input"
@@ -104,15 +127,17 @@ class Search extends React.Component {
                         value="Tweet" 
                       />
                   </div>
-              </form>
+              </form> */}
             <br />
             {/* <TweetBox text={this.state.newTweet} /> */}
         </div>
           </div >
           <div className="feed">
-            {this.props.tweets.map(tweet => (
-              <TweetBox key={tweet._id} date={tweet.date} user={tweet.user} text={tweet.text} />
-            ))}
+            {/* {this.state.result.map(user => (
+                <div>{user.handle}</div>
+            //   <TweetBox key={tweet._id} date={tweet.date} user={tweet.user} text={tweet.text} />
+            ))} */}
+            {this.state.result.handle}
           </div>
         </div>
       );
