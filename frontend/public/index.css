@@ -115,8 +115,7 @@ h3 {
 
 .logout {
     height: 10px;
-    background-color: wheat;
-    border: none;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);    border: none;
     padding: 10px;
     border-radius: 50%;
     height: 50px;
@@ -262,8 +261,7 @@ button {
 }
 
 .profile-pic {
-    background-color: wheat;
-    width: 50px;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);    width: 50px;
     height: 50px;
     border-radius: 50%;
 }
