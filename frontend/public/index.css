@@ -421,6 +421,7 @@ button {
     position: fixed;
     top: 0px;
     width: 100%;
+    /* width: 563px; */
     z-index: 2;
     background-color: white;
     /* margin-top: 100px; */
@@ -431,6 +432,7 @@ button {
     margin-right: 10px;
     color: #25A1F2;
     padding: 20px;
+    float: left;
 }
 
 .bar-right-side {
@@ -438,6 +440,12 @@ button {
     /* border: 1px solid hotpink; */
     color: #5B7083;
     font-size: 12px;
+    position: absolute;
+    z-index: 2;
+    color: black;
+    top: 55px;
+    left: 70px;
+
 }
 
 .profile-handle {

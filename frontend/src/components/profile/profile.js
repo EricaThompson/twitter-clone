@@ -1,5 +1,6 @@
 import React from 'react';
 import TweetBox from '../tweets/tweet_box';
+import {Link} from 'react-router-dom';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -91,7 +92,7 @@ class Profile extends React.Component {
           return (
             <div className="profile-container">
               <div className="profile-bar">
-                <div><i className="fas fa-arrow-left"></i></div>
+                <div><Link to="/tweets"><i className="fas fa-arrow-left"></i></Link></div>
                 <div className="bar-right-side">
                   <div className="profile-handle">{this.props.currentUser.handle}</div>
                   <div>{this.state.tweets.length} Tweets</div>
