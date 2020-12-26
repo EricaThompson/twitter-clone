@@ -19,26 +19,10 @@ class TweetBox extends React.Component {
   // }
 
   componentDidMount(){
-    let goodValues;
     axios.get(`/author/${this.props.user}`)
       .then(res => 
-        // console.log('getauthor res', res),
-        // let goodValues;
-
-        // if (Object.values.res.handle){
-        //   goodValues.push(res.handle)
-        // }
-        // console.log(res.data.handle)
         this.setState({author: res.data.handle})
       )
-      // try {
-
-      //   const response = await fetch(axios.get(`/author/${this.props.user}`))
-      //   const json = await response.json()  
-      //   this.setState({author: json})
-      // } catch (error){
-      //   console.log(error)
-      // }
   }
 
   render() {

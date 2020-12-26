@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 
 const passport = require('passport');
 const path = require('path');
+const User = require('./models/User');
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -41,7 +42,39 @@ require('./config/passport')(passport);
 app.get(`/author/:id`, (req, res) => {
   // let id = req.params.id
   User.findOne({_id: req.params.id})
-    .then(result => res.send(result)).catch(err => console.groupCollapsed(err))
+    .then(result => res.send(result)).catch(err => console.log(err))
+})
+
+app.get(`/search/:query`, (req, res) => {
+  User.find({handle: {$regex: `${req.params.query}`}})
+    .then(result => res.send(result)).catch(err => console.log(err))
+
+  // let id = req.params.id
+  // const regex = new RegExp(escapeRegex(req.params.query), 'gi');
+  // User.find({handle: regex})
+  //   .then(result => res.send(result)).catch(err => console.log(err))
+  // User.aggregate([{
+  //   $search: {
+  //     // "index": <index name>, // optional, defaults to "default"
+  //     "text": {
+  //       "query": req.params.query,
+  //       "path": 'handle',
+  //       "fuzzy": {
+  //         "maxEdits": 1,
+  //         "maxExpansions": 100,
+  //       }
+  //     }
+  //   }
+  // }, {
+  //   $limit: 10
+  // }
+    
+    
+  // ])
+
+
+  
+
 })
 
 
