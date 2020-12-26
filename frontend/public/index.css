@@ -114,7 +114,7 @@ h3 {
 }
 
 .disabled {
-    color: rgb(197, 193, 193);
+    color: rgb(236, 230, 230);
     padding: 14px;
     font-size: 23px;
     margin-top: -20px;
@@ -196,7 +196,7 @@ button {
 
 .nav {
     /* margin-right: 50px; */
-    margin-left: -60px;
+    margin-left: -55px;
     margin-top: -15px;
     position: fixed;
     overflow-y: scroll;
@@ -295,6 +295,7 @@ button {
     width: 100%;
     /* margin-left: 10px; */
     margin: 53px auto 0 auto;
+    height: 124px;
 }
 
 .profile-pic {
@@ -313,6 +314,33 @@ button {
 .input-area {
     position: relative;
     width: 100%;
+}
+
+.compose-buttons {
+    /* position: absolute; */
+    display: flex;
+    color: rgb(236, 230, 230);
+    margin-top: 25px;
+    margin-left: 11px;
+    font-size: 22px;
+    justify-content: space-between;
+    width: 171px;
+    /* margin-bottom: 0px; */   
+}
+
+.gif {
+    font-size: 10px;
+    border: 1px solid rgb(236, 230, 230);
+    padding: 4px 2px;
+    border-radius: 3px;
+    align-self: center;
+}
+
+.fa-chart-bar {
+    transform: rotate(90deg);
+    margin-left: -5px;
+    font-size: 18px;
+    margin-bottom: 1px;
 }
 
 .compose-button {

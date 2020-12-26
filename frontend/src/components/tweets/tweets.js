@@ -72,6 +72,13 @@ class Tweet extends React.Component {
                           onChange={this.update()}
                           placeholder="What's happening?"
                       />
+                      <div className="compose-buttons">
+                        <i className="far fa-image"></i>
+                        <div className="gif">GIF</div>
+                        <i className="far fa-chart-bar"></i>
+                        <i className="far fa-smile"></i>
+                        <i className="far fa-calendar-plus"></i>
+                      </div>
                       <input
                         className="compose-button"
                         disabled={disabler} 
