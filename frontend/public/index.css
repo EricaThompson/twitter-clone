@@ -58,8 +58,10 @@ h3 {
 
 .fa-earlybirds {
     color: #25A1F2;
-    padding: 10px;
+    padding: 12px;
     font-size: 25px;
+    /* border: 1px solid purple; */
+
 }
 
 .fa-earlybirds:hover {
@@ -70,8 +72,9 @@ h3 {
 
 .fa-igloo {
     color: #25A1F2;
-    padding: 10px;
-    font-size: 25px;
+    padding: 12px;
+    font-size: 23px;
+
 }
 
 .fa-igloo:hover {
@@ -83,7 +86,7 @@ h3 {
 .fa-user {
     /* color: #25A1F2; */
     color: #10151A;
-    padding: 10px;
+    padding: 14px;
     font-size: 25px;
 }
 
@@ -97,13 +100,29 @@ h3 {
 .fa-feather {
     color: white;
     background-color: #25A1F2;
-    padding: 15px;
+    padding: 17px;
     border-radius: 50%;
     
 }
 
 .fa-feather:hover {
     background-color: #1f88ce
+}
+
+.disabled {
+    color: rgb(197, 193, 193);
+    padding: 14px;
+    font-size: 23px;
+}
+
+.fa-ellipsis-h {
+    border: 1px solid rgb(197, 193, 193);
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 4px;
+    margin-left: 13px;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 
 .top-links {
@@ -157,7 +176,8 @@ input[type=submit] {
 }
 
 input::placeholder {
-    color: rgb(175, 175, 175);
+    color: #5B7083;
+    font-size: 19px;
 }
 
 button {
@@ -171,6 +191,8 @@ button {
 .nav {
     margin-right: 20px;
     margin-left: -60px;
+    /* border: 1px solid purple; */
+
 }
 
 .nav-bar {

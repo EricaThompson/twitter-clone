@@ -23,7 +23,11 @@ class NavBar extends React.Component {
             >
                 <Link to={'/tweets'}><p><i className="fab fa-earlybirds"></i></p></Link>
                 <Link to={'/tweets'}><p><i className="fas fa-igloo"></i></p></Link>
+                <p><i className="fas fa-search disabled"></i></p>
+                <p><i className="far fa-bell disabled"></i></p>
+                <p><i className="far fa-envelope disabled"></i></p>
                 <Link to={'/profile'}><p><i className="far fa-user"></i></p></Link>
+                <p><i className="fas fa-ellipsis-h disabled"></i></p>
                 <Link to={'/new_tweet'}><p><i className="fas fa-feather"></i></p></Link>
                 <button 
                   onClick={this.logoutUser}
@@ -35,8 +39,8 @@ class NavBar extends React.Component {
       } else {
         return (
             <div className="top-links">
-                {/* <Link to={'/signup'}><p>Signup</p></Link> */}
-                {/* <Link to={'/login'}><p>Login</p></Link> */}
+                <Link to={'/signup'}><p>Signup</p></Link>
+                <Link to={'/login'}><p>Login</p></Link>
             </div>
         );
       }
