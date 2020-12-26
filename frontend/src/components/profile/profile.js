@@ -94,15 +94,15 @@ class Profile extends React.Component {
               <div className="profile-bar">
                 <div><Link to="/tweets"><i className="fas fa-arrow-left"></i></Link></div>
                 <div className="bar-right-side">
-                  <div className="profile-handle">{this.props.currentUser.handle}</div>
-                  <div>{this.state.tweets.length} Tweets</div>
+                  <div className="top-profile-handle">{this.props.currentUser.handle}</div>
+                  <div className="tweet-count">{this.state.tweets.length} Tweets</div>
                 </div>
               </div> 
               <div className="header-img-container">
                 <img className="header-img" src='https://campsound-dev.s3-us-west-1.amazonaws.com/pexels-lisa-fotios-2215534.jpg' alt='' />
               </div>
 
-              <div className="profile-container">
+              <div className="profile">
                   <div className="profile-pic main"></div>
                   <div className="profile">
                     <div className="profile-handle">@{this.props.currentUser.handle}</div>

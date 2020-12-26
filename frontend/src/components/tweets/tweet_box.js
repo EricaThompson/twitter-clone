@@ -102,7 +102,7 @@ class TweetBox extends React.Component {
               <br />
               <br />
               <h3 className="tweet">{this.props.text}</h3>
-              <div className='social-icons'>
+              <div className='social-icons grayed-out'>
                 <i className="far fa-comment"></i>
                 <i className="fas fa-retweet"></i>
                 <i className="far fa-heart"></i>
