@@ -53,6 +53,8 @@ class Tweet extends React.Component {
       disabler = false
     }
 
+    
+
 
     if (this.props.tweets.length === 0) {
       return (<div>There are no Tweets</div>)
@@ -95,7 +97,7 @@ class Tweet extends React.Component {
           </div >
           <div className="feed">
             {this.props.tweets.map(tweet => (
-              <TweetBox key={tweet._id} user={tweet.user} text={tweet.text} />
+              <TweetBox key={tweet._id} date={tweet.date} user={tweet.user} text={tweet.text} />
             ))}
           </div>
         </div>
