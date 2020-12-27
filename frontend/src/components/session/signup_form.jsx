@@ -39,16 +39,18 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history.push('/tweets')); 
+    this.props.signup(user); 
   }
 
   renderErrors() {
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <div className='errors'>
             {this.state.errors[error]}
-          </li>
+          </div>
+          // <li key={`error-${i}`}>
+          // </li>
         ))}
       </ul>
     );

@@ -64,6 +64,11 @@ h3 {
 
 }
 
+input[type=submit]:focus, input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+    box-shadow: none;
+}
+
 .fa-earlybirds:hover {
     background-color: #e6f5fe;
     color: #25A1F2;
@@ -149,6 +154,7 @@ h3 {
     top: 0;
     right: 0;
     display: flex;
+    display: none;
 }
 
 .logout {
@@ -386,7 +392,6 @@ button {
     /* padding: 20px; */
     padding-top: 0px;
     background-color: white;
-    
 }
 
 
@@ -642,7 +647,7 @@ button {
 /* Session forms*/
 
 .session-container {
-    margin: 0 auto;
+    margin: 70px auto;
     text-align: center;
 }
 
@@ -665,6 +670,7 @@ button {
     border: none;
     border: 1px solid gray;
     margin-bottom: 20px;
+    padding-left: 20px;
     /* padding: 10px; */
 }
 
@@ -684,10 +690,19 @@ button {
     
 }
 
-/* .session-link {
-    color: 
+.session-link {
+    color: #25A1F2;
     margin: 0;
-} */
+}
+
+.errors {
+    /* margin-right: 50px; */
+    padding-right: 45px;
+    color: #E0255F;
+    /* border: 1px solid purple; */
+    /* width: 100%; */
+    /* justify-self: flex-start; */
+}
 
 /*Search*/
 
