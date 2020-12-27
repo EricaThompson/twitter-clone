@@ -691,6 +691,10 @@ button {
 
 /*Search*/
 
+.search-container {
+    margin-left: 50px;
+}
+
 .search-form {
     width: 563px;
     /* background-color: #ECEEF1; */

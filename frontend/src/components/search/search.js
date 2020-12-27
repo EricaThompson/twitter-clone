@@ -57,7 +57,7 @@ class Search extends React.Component {
         axios.get(`search/${this.state.query}`)
           .then(res => 
             // console.log(res)
-            this.setState({result: Object.values(res)}, this.props.history.replace('/search'))
+            this.setState({result: res.data}, this.props.history.replace('/search'))
 
           ).catch(err => console.log('results err', err))
       }
@@ -71,9 +71,18 @@ class Search extends React.Component {
         // disabler = false
         // }
         
-        console.log('update', this.state.query)
-        console.log('search res', this.state.result)
-        setTimeout(()=>console.log('res object handle: ', Object.values(this.state.result[0][0]).map(each => each)), 4000)
+        // console.log('update', this.state.query)
+        // console.log('search res', this.state.result)
+        // setTimeout(()=>console.log('res object handle: ', Object.values(this.state.result[0][0]).map(each => each)), 4000)
+        let multiple = []
+        let single = []
+        if (this.state.result.length > 1) {
+            multiple = this.state.result
+            console.log('mult', multiple)
+        } else {
+            single = this.state.result
+            console.log('sing',single)
+        }
 
     
 
@@ -95,9 +104,9 @@ class Search extends React.Component {
             )
     } else {
       return (
-        <div className="tweets">
-          <div className="home-bar">
-            <h1 className="home-title">Results for '{this.state.query}'</h1>
+        <div className="search-container">
+          <div className="search-bar">
+            <h1 className="search-title">Results for '{this.state.query}'</h1>
             {/* <input 
                 type="text"
             /> */}
@@ -105,8 +114,15 @@ class Search extends React.Component {
             {/* <div className='sparkle'>✨</div> */}
           </div>
           
-    
-          <div className="feed">
+          <div className="results">
+            <div></div>
+              {multiple.map((each) => {
+                  return (
+                    <div>{each.handle}</div>
+                  )
+              })}
+
+              {Object.values(single)[0].handle}
               
             {/* {this.state.result.map(user => (
                 <div>{user.handle}</div>
