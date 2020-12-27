@@ -74,14 +74,17 @@ class Search extends React.Component {
         // console.log('update', this.state.query)
         // console.log('search res', this.state.result)
         // setTimeout(()=>console.log('res object handle: ', Object.values(this.state.result[0][0]).map(each => each)), 4000)
-        let multiple = []
-        let single = []
+        let multiple = [{handle: ''}]
+        let single = [{handle: ''}]
         if (this.state.result.length > 1) {
             multiple = this.state.result
             console.log('mult', multiple)
-        } else {
+        } else if (this.state.result.length === 1){
             single = this.state.result
             console.log('sing',single)
+        } else {
+            multiple = []
+            single = []
         }
 
     
@@ -105,12 +108,25 @@ class Search extends React.Component {
     } else {
       return (
         <div className="search-container">
+            <div className="search-bar">
+                <p><i className="fas fa-search search-bar-icon"></i></p>
+                <form 
+                    onSubmit={(e)=>this.searchUsers(e)}
+                    className="search-form">
+                    <input
+                        onChange={this.update()}
+                        className="search" 
+                        type="text"
+                        placeholder="Search Owly"
+                    />
+                </form>
+            </div>
           <div className="search-bar">
-            <h1 className="search-title">Results for '{this.state.query}'</h1>
+            <h1 className="search-title">User results for '{this.state.query}'</h1>
             {/* <input 
                 type="text"
             /> */}
-            <p><i className="fas fa-ellipsis-h disabled"></i></p>
+            {/* <p><i className="fas fa-ellipsis-h disabled"></i></p> */}
             {/* <div className='sparkle'>✨</div> */}
           </div>
           
@@ -118,9 +134,10 @@ class Search extends React.Component {
             <div></div>
               {multiple.map((each) => {
                   return (
-                    <div>{each.handle}</div>
+                    <div><p>@{each.handle}</p></div>
                   )
-              })}
+              })
+              }
 
               {Object.values(single)[0].handle}
               
