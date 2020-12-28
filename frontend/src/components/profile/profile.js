@@ -87,7 +87,7 @@ class Profile extends React.Component {
         // ))
 
         if (this.state.tweets.length === 0) {
-          return (<div>This user has no Tweets{this.state.status}</div>)
+          return (<div className='profile-spinner spinner'><i className="fas fa-spinner fa-spin"></i></div>)
         } else {
           return (
             <div className="profile-container">

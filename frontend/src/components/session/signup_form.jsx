@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, useHistory, Link } from 'react-router-dom';
+// import { login } from '../../util/session_api_util';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -18,11 +19,15 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push('/login');
     }
 
     this.setState({errors: nextProps.errors})
   }
+
+  // componentDidUpdate(){
+  //   this.props.login(this.state)
+  // }
 
   update(field) {
     return e => this.setState({
@@ -46,9 +51,11 @@ class SignupForm extends React.Component {
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <div className='errors'>
             {this.state.errors[error]}
-          </li>
+          </div>
+          // <li key={`error-${i}`}>
+          // </li>
         ))}
       </ul>
     );
