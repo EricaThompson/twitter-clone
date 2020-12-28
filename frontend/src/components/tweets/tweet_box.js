@@ -19,7 +19,7 @@ class TweetBox extends React.Component {
   // }
 
   componentDidMount(){
-    let goodValues;
+    // let goodValues;
     axios.get(`/author/${this.props.user}`)
       .then(res => 
         // console.log('getauthor res', res),

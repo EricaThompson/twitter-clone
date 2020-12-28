@@ -41,8 +41,8 @@ class NavBar extends React.Component {
       } else {
         return (
             <div className="top-links">
-                <Link to={'/signup'}><p>Signup</p></Link>
-                <Link to={'/login'}><p>Login</p></Link>
+                {/* <Link to={'/signup'}><p>Signup</p></Link>
+                <Link to={'/login'}><p>Login</p></Link> */}
             </div>
         );
       }
